@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co.com/82BSzPJ/1.jpg",
+        "name": "Virat Kohli",
+        "nationality": "India",
+        "playerType": "Batsman",
+        "playingStyle": "Right-hand bat",
+        "bowlingType": null,
+        "price": "$10,500,000"
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co.com/GHnhRYr/2.jpg",
+        "name": "Jasprit Bumrah",
+        "nationality": "India",
+        "playerType": "Bowler",
+        "playingStyle": null,
+        "bowlingType": "Right-hand fast",
+        "price": "$9,000,000"
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co.com/WHSq7qT/3.jpg",
+        "name": "Ravindra Jadeja",
+        "nationality": "India",
+        "playerType": "Allrounder",
+        "playingStyle": "Left-hand bat",
+        "bowlingType": "Left-arm orthodox",
+        "price": "$8,500,000"
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co.com/kq2Gb7q/4.jpg",
+        "name": "Steve Smith",
+        "nationality": "Australia",
+        "playerType": "Batsman",
+        "playingStyle": "Right-hand bat",
+        "bowlingType": null,
+        "price": "$10,000,000"
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co.com/h24VrYL/5.jpg",
+        "name": "Mitchell Starc",
+        "nationality": "Australia",
+        "playerType": "Bowler",
+        "playingStyle": null,
+        "bowlingType": "Left-hand fast",
+        "price": "$9,500,000"
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co.com/8YXG0m6/6.jpg",
+        "name": "Ben Stokes",
+        "nationality": "England",
+        "playerType": "Allrounder",
+        "playingStyle": "Left-hand bat",
+        "bowlingType": "Right-arm medium",
+        "price": "$11,000,000"
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co.com/Mg2XRMx/7.jpg",
+        "name": "Kane Williamson",
+        "nationality": "New Zealand",
+        "playerType": "Batsman",
+        "playingStyle": "Right-hand bat",
+        "bowlingType": null,
+        "price": "$9,000,000"
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co.com/xgWQTFK/8.jpg",
+        "name": "Trent Boult",
+        "nationality": "New Zealand",
+        "playerType": "Bowler",
+        "playingStyle": null,
+        "bowlingType": "Left-arm fast",
+        "price": "$8,000,000"
+    },
+    {
+        "id": 9,
+        "image": "https://i.ibb.co.com/HDYp6Rm/9.png",
+        "name": "Joe Root",
+        "nationality": "England",
+        "playerType": "Batsman",
+        "playingStyle": "Right-hand bat",
+        "bowlingType": null,
+        "price": "$9,500,000"
+    },
+    {
+        "id": 10,
+        "image": "https://i.ibb.co.com/PrbTNQL/10.jpg",
+        "name": "Rashid Khan",
+        "nationality": "Afghanistan",
+        "playerType": "Bowler",
+        "playingStyle": null,
+        "bowlingType": "Right-arm leg-spin",
+        "price": "$8,000,000"
+    },
+    {
+        "id": 11,
+        "image": "https://i.ibb.co.com/Z6P8cFN/11.jpg",
+        "name": "Shakib Al Hasan",
+        "nationality": "Bangladesh",
+        "playerType": "Allrounder",
+        "playingStyle": "Left-hand bat",
+        "bowlingType": "Left-arm orthodox",
+        "price": "$10,000,000"
+    },
+    {
+        "id": 12,
+        "image": "https://i.ibb.co.com/fXX0WsM/12.jpg",
+        "name": "David Warner",
+        "nationality": "Australia",
+        "playerType": "Batsman",
+        "playingStyle": "Left-hand bat",
+        "bowlingType": null,
+        "price": "$10,500,000"
+    }
+]
