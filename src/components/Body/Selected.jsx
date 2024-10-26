@@ -38,6 +38,6 @@ export default function Selected({ selected, handleDelete, handleAddMore }) {
 Selected.propTypes = {
     selected: PropTypes.array.isRequired,
     handleDelete: PropTypes.func.isRequired,
-    handleAddMore: PropTypes.func.isRequired
+    handleAddMore: PropTypes.func
 
 }
