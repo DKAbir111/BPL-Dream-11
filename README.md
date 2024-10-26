@@ -4,7 +4,7 @@
 BPL-DREAM 11 is a React-based application that enables users to create and manage their fantasy cricket teams. With a visually appealing design inspired by Figma, this application features player selection, team management, and an interactive user experience.
 
 ## Live Demo
-Check out the live application [here](YOUR_LIVE_LINK_HERE).
+Check out the live application [here](https://subtle-gingersnap-281569.netlify.app/).
 
 ## Technologies Used
 - **React** (using hooks like `useState` and `useEffect`)
