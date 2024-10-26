@@ -3,8 +3,8 @@ import Doller from "../../assets/coin.png"
 import Logo from "../../assets/logo.png"
 import { ToastContainer } from "react-toastify";
 
-export default function Navbar({ coin, newCoin }) {
-    console.log(newCoin);
+export default function Navbar({ coin }) {
+
     return (
 
         <div className="bg-white bg-opacity-70 backdrop-blur-lg  fixed top-0 left-0 right-0 z-10">
@@ -19,7 +19,7 @@ export default function Navbar({ coin, newCoin }) {
                         <li><a>Fixture</a></li>
                         <li><a>Teams</a></li>
                         <li><a>Schedules</a></li>
-                        <li className="flex items-center"><a className="border font-semibold">{newCoin > 0 ? (coin - newCoin) : coin} Coin <img src={Doller} alt="" /></a></li>
+                        <li className="flex items-center"><a className="border font-semibold">{coin} Coin <img src={Doller} alt="" /></a></li>
                     </ul>
                 </div>
             </div>
@@ -31,5 +31,4 @@ export default function Navbar({ coin, newCoin }) {
 
 Navbar.propTypes = {
     coin: PropTypes.number.isRequired,
-    newCoin: PropTypes.number.isRequired
 };

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { IoMdSad } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
-export default function Selected({ selected, handleDelete }) {
+export default function Selected({ selected, handleDelete, handleAddMore }) {
     // const { image, name, battingType, ballingType } = selected;
     console.log(selected);
 
@@ -25,6 +25,12 @@ export default function Selected({ selected, handleDelete }) {
                     ))) :
                     <p className="text-2xl flex gap-2 items-center justify-center">No selected players yet <IoMdSad /></p>
             }
+            <div className="flex">
+                <div className="border rounded-xl border-[#E7FE29] p-2">
+                    <button className="btn bg-[#E7FE29] border-none" onClick={handleAddMore}>Add More Player</button>
+                </div>
+            </div>
+
         </div>
     )
 }
@@ -32,5 +38,6 @@ export default function Selected({ selected, handleDelete }) {
 Selected.propTypes = {
     selected: PropTypes.array.isRequired,
     handleDelete: PropTypes.func.isRequired,
+    handleAddMore: PropTypes.func.isRequired
 
 }

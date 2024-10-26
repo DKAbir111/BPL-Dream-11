@@ -6,25 +6,27 @@ import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Body({ setNewCoin, coin, newCoin }) {
+export default function Body({ handleNewCoin, coin }) {
     const [active, setActive] = useState(true);
 
     const handleClick = (isActive) => {
         if (isActive !== active) {
-
             setActive(isActive);
         }
+    }
+
+    const handleAddMore = () => {
+        setActive(true);
     }
 
     const [selected, setSeletcted] = useState([]);
     const notify = (name) => toast.success(`Congratulations! ${name} has been added to your team!`);
     const handleChoosePlayer = (player) => {
 
-        if (selected.length < 6 && !selected.includes(player) && coin >= newCoin) {
-            // const allSelected = [...selected, player]
+        if (selected.length < 6 && !selected.includes(player) && player.price <= coin) {
             setSeletcted([...selected, player]);
             notify(player.name);
-            setNewCoin(Number(player.price));
+            handleNewCoin(Number(player.price));
             return;
         }
         if (selected.includes(player)) {
@@ -32,8 +34,8 @@ export default function Body({ setNewCoin, coin, newCoin }) {
             return;
 
         }
-        if (newCoin > coin) {
-            toast.error("Not enough funds!");
+        if (coin < player.price) {
+            toast.error("Not enough funds available!");
             return;
         }
         else {
@@ -60,16 +62,15 @@ export default function Body({ setNewCoin, coin, newCoin }) {
 
                 </div>
             </div>
-            {active ? <Available handleChoosePlayer={handleChoosePlayer} /> : <Selected selected={selected} handleDelete={handleDelete} />}
+            {active ? <Available handleChoosePlayer={handleChoosePlayer} handleNewCoin={handleNewCoin} /> : <Selected selected={selected} handleDelete={handleDelete} handleAddMore={handleAddMore} />}
         </div>
     )
 }
 
 
 Body.propTypes = {
-    setNewCoin: PropTypes.func.isRequired,
+    handleNewCoin: PropTypes.func.isRequired,
     coin: PropTypes.number.isRequired,
-    newCoin: PropTypes.number.isRequired
 }
 
 
