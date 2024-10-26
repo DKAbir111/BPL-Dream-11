@@ -1,7 +1,8 @@
 import PropTypes from "prop-types"
 import { FaFlag } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-const Card = ({ player }) => {
+
+const Card = ({ player, handleChoosePlayer }) => {
     const { name, image, nationality, playerType, playingStyle, bowlingType, price } = player;
     return (
         <div className="flex flex-col gap-3 border rounded-lg p-5">
@@ -18,7 +19,7 @@ const Card = ({ player }) => {
             </div>
             <div className="flex justify-between items-center">
                 <p>Price: {price}</p>
-                <p className="btn btn-sm text-opacity-70 font-normal">Choose Player</p>
+                <button className="btn btn-sm text-opacity-70 font-normal hover:bg-[#E7FE29]" onClick={() => handleChoosePlayer(player)}>Choose Player</button>
             </div>
         </div>
     )
@@ -26,5 +27,6 @@ const Card = ({ player }) => {
 export default Card
 
 Card.propTypes = {
-    player: PropTypes.object.isRequired
+    player: PropTypes.object.isRequired,
+    handleChoosePlayer: PropTypes.func.isRequired
 }

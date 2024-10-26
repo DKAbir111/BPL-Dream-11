@@ -2,18 +2,32 @@
 import { useState } from 'react'
 import Available from './Available'
 import Selected from './Selected'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Body() {
     const [active, setActive] = useState(true);
 
     const handleClick = (isActive) => {
         if (isActive !== active) {
+
             setActive(isActive);
         }
     }
+
+    const [selected, setSeletcted] = useState([]);
+    const notify = (name) => toast.success(`Congratulations! ${name} has been added to your team!`);
+    const handleChoosePlayer = (player) => {
+        // const allSelected = [...selected, player]
+        setSeletcted([...selected, player]);
+        notify(player.name);
+    }
+    // console.log(selected);
     return (
         <div className='container md:mx-auto p-2'>
-
+            <ToastContainer position="top-center"
+            />
             <div className='flex justify-between items-center py-16'>
                 <h2 className='text-xl font-semibold'>{active ? "Available Players" : "Selected Player (4/6)"}</h2>
 
@@ -23,7 +37,7 @@ export default function Body() {
 
                 </div>
             </div>
-            {active ? <Available /> : <Selected />}
+            {active ? <Available handleChoosePlayer={handleChoosePlayer} /> : <Selected selected={selected} />}
         </div>
     )
 }
