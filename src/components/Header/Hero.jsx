@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Banner from "../../assets/banner-main.png"
 import BgImage from "../../assets/bg-shadow.png"
-export default function Hero({ coin, setCoin, notify }) {
+export default function Hero({ coin, setCoin }) {
+
+
     const handleClick = () => {
         setCoin(coin + 6000000);
         notify();
+
     }
+    const notify = () => toast.success("Credit added to you account!");
     return (
 
 
@@ -30,6 +36,7 @@ export default function Hero({ coin, setCoin, notify }) {
 
                 </div>
             </div>
+
         </div>
 
     )
@@ -37,5 +44,4 @@ export default function Hero({ coin, setCoin, notify }) {
 Hero.propTypes = {
     coin: PropTypes.number.isRequired,
     setCoin: PropTypes.func.isRequired,
-    notify: PropTypes.func.isRequired,
 };

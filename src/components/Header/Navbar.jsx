@@ -7,7 +7,7 @@ export default function Navbar({ coin }) {
     return (
 
         <div className="bg-white bg-opacity-70 backdrop-blur-lg  fixed top-0 left-0 right-0 z-10">
-            <ToastContainer />
+            <ToastContainer position="top-center" />
             <div className="navbar container md:mx-auto">
                 <div className="flex-1">
                     <a className="text-xl"><img src={Logo} alt="Logo" className="border border-dashed" /></a>
