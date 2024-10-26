@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import { useState } from 'react'
 import Available from './Available'
 import Selected from './Selected'
@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Body() {
+export default function Body({ setNewCoin, coin, newCoin }) {
     const [active, setActive] = useState(true);
 
     const handleClick = (isActive) => {
@@ -19,10 +19,12 @@ export default function Body() {
     const [selected, setSeletcted] = useState([]);
     const notify = (name) => toast.success(`Congratulations! ${name} has been added to your team!`);
     const handleChoosePlayer = (player) => {
-        if (selected.length < 6 && !selected.includes(player)) {
+
+        if (selected.length < 6 && !selected.includes(player) && coin >= newCoin) {
             // const allSelected = [...selected, player]
             setSeletcted([...selected, player]);
             notify(player.name);
+            setNewCoin(Number(player.price));
             return;
         }
         if (selected.includes(player)) {
@@ -30,11 +32,20 @@ export default function Body() {
             return;
 
         }
+        if (newCoin > coin) {
+            toast.error("Not enough funds!");
+            return;
+        }
         else {
             toast.error("Maximum limit reached for team selection!");
             return;
 
         }
+    }
+
+    // Delete
+    const handleDelete = (id) => {
+        setSeletcted(selected.filter(selected => selected.id !== id));
     }
     // console.log(selected);
     return (
@@ -49,7 +60,16 @@ export default function Body() {
 
                 </div>
             </div>
-            {active ? <Available handleChoosePlayer={handleChoosePlayer} /> : <Selected selected={selected} />}
+            {active ? <Available handleChoosePlayer={handleChoosePlayer} /> : <Selected selected={selected} handleDelete={handleDelete} />}
         </div>
     )
 }
+
+
+Body.propTypes = {
+    setNewCoin: PropTypes.func.isRequired,
+    coin: PropTypes.number.isRequired,
+    newCoin: PropTypes.number.isRequired
+}
+
+

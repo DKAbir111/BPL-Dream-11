@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
 import { IoMdSad } from "react-icons/io";
 import { MdDeleteForever } from "react-icons/md";
-export default function Selected({ selected }) {
+export default function Selected({ selected, handleDelete }) {
     // const { image, name, battingType, ballingType } = selected;
     console.log(selected);
+
+
     return (
         <div className="flex flex-col gap-3">
             {
@@ -18,7 +20,7 @@ export default function Selected({ selected }) {
                                 </div>
                             </div>
 
-                            <MdDeleteForever className="text-3xl text-red-500" />
+                            <MdDeleteForever className="text-3xl hover:text-red-500 hover:cursor-pointer" onClick={() => handleDelete(player.id)} />
                         </div>
                     ))) :
                     <p className="text-2xl flex gap-2 items-center justify-center">No selected players yet <IoMdSad /></p>
@@ -28,5 +30,7 @@ export default function Selected({ selected }) {
 }
 
 Selected.propTypes = {
-    selected: PropTypes.array.isRequired
+    selected: PropTypes.array.isRequired,
+    handleDelete: PropTypes.func.isRequired,
+
 }

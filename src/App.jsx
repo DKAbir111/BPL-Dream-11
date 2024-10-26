@@ -1,6 +1,5 @@
 import './App.css'
-import Body from './components/Body/Body'
-import Header from './components/Header/Header'
+import MainContainer from './components/MainContainer'
 
 
 function App() {
@@ -10,8 +9,7 @@ function App() {
 
 
     <>
-      <Header />
-      <Body />
+      <MainContainer />
     </>
 
 
